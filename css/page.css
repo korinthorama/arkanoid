@@ -1,0 +1,10 @@
+body {
+    background-color: #2a2a2a;
+    margin: 0;
+    padding: 0;
+}
+
+#my_arkanoid {
+    min-height: 1700px;
+    padding-top: 200px
+}

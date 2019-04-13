@@ -1,0 +1,156 @@
+#arkanoid {
+    width: 791px;
+    position: relative;
+    margin: auto;
+    font-family: Arial, Tahoma, SansSerif;
+}
+
+#arkanoid a {
+    text-decoration: none;
+    outline: none;
+}
+
+#arkanoid h3 {
+    margin-bottom: 5px;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+#terrain_wrapper {
+    width: 576px;
+    height: 384px;
+    position: absolute;
+    left: 0;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAR9JREFUeNrs102OREAYBuDXEH9H6ERIhAvUZVzKHdi6gy1rOyFWrOyxITol6U56WjMZysyivo0o4n2Q4ishz3Ni2zYkScJV1fc9fN/HMAwQuq4jdV3jKsQjvGmaZV+Y55nQwSsQ38OfgMdBloi18BcAS8Sn8DcAC8RW+CrgTMReOK3Vq+u6DsuykGXZobs3TXMz/COAlqIoy5YQwnRafuGPiwM4gAM4gAM44H8Djv6KaVMjiuLmOasdEa0kSRCG4SGApmkwDANVVWGapp8D4jhGFEWnPOI9xBsgCAKkaXrqe95CvABYhO8hngCW4VuIZW1Iw492wL9ByLIMUVXVW1mWl837cRyX9YLruvA8D6LjOLerPz4U0bYtiqLAXYABAD7c1H6ljL+xAAAAAElFTkSuQmCC');
+    border: 5px solid #929292;
+}
+
+#terrain_wrapper {
+    width: 576px;
+    height: 384px;
+}
+
+#game_board {
+    position: absolute;
+    left: 586px;
+    width: 150px;
+    height: 384px;
+    border: 5px solid #929292;
+    border-left: none;
+    color: #ffffff;
+    background-color: #363f41;
+}
+
+#score_wrapper {
+    text-align: center;
+}
+
+#racket {
+    display: inline-block;
+    position: absolute;
+    top: 352px;
+    white-space: nowrap !important;
+}
+
+.racket_left {
+    display: inline-block;
+    width: 10px;
+    height: 120px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAIAAACExCpEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMhJREFUeNpsjcsKQVEUhvdlHYXkNpKJKQM8gjdQZsae1pRCUupQ4lzEcTn2bdk7ORn427PvW9+mk3GBUcoYsS+bMWQ5E8PBCPqd3Icx+oORnA+63qxCt+0B/MHXmWg1KtDreEqh0i6YzdrTMuOlPMxXUmtUyl1khsXHwAS7CBZrKSRxxjfw+egU6WAXwnKjXi8UEqV0AYcp4UDCyIT7GLa+uj/wmWIqnGHHOcl5lMc2HsMlwUtikhteE2MNi4HTUpHWUgz88C3AAF5cc6Mzggt3AAAAAElFTkSuQmCC') center top no-repeat;
+}
+
+.racket_middle {
+    display: inline-block;
+    width: 34px;
+    height: 120px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAIAAABmGDE9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADJJREFUeNpi2Tq5hIEIwCKlIk6UOgklMaLU8QhyE6Xuyc3nRKp7RpS6p7dfDIS9AAEGAIfjD+SQMaebAAAAAElFTkSuQmCC') center top repeat-x;
+}
+
+.racket_right {
+    display: inline-block;
+    width: 10px;
+    height:  120px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAIAAACExCpEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMhJREFUeNpsjUkKwkAQRXuoFkQCigOKG5eahYqX8RbexKt4A08hqIir6C4D0Tgk6U6X3QSDCz+1e+//gvVqudluxlPBKGWMmKuiNYH2sNXvsblbKxmjPxgJjAbNRYdPJwLgH+ZO3emymSuUQlXYwSrGBv8SBpHeHWVRoFK2URklDvxQ708yl8Qa34HyEQTXKIr14ayyDHOJUtoBiynhYNtRfNepp54vfKeY5tYw4ZzUBAXfCzJOsgRviU4eeE+0MQwGTp0G/QgwAHnYbWbckStEAAAAAElFTkSuQmCC') center top no-repeat;;
+}
+
+#ball {
+    position: absolute;
+    left: -2000px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(128, 215, 240);
+    box-shadow: inset -3px -2px 4px rgba(0, 0, 0, 0.85);
+}
+
+.brick {
+    position: absolute;
+    left: -2000px;
+    width: 40px;
+    height: 15px;
+    box-sizing: border-box;
+    border: 2px solid;
+}
+
+#brick36 { /* gold brick */
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAGCAIAAAC0FdI9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAOFJREFUeNqc0M1Kw0AUhuEzMyfp2AqtsYGIWhTadS/G2xK8qq66KLjRhYtCRaR/MTVC5ic9HpjeQOfdzbd4YI54eX666FgphRBgbDq5mw77XYhq/v4B8Bkobl1mOH7APCOepIBtqa7zq5tiEKdnm9WoSALFzRYCR7eqGJJviQiOIBOddLppnH7ZU4/3GChOp4DLVbveOO+Bt0MNeX8vahOn73fm9e1E8bP+I/z6bn3rm4ac502KbGe3hzi9qpqyOlF8e3ckLH+1c2gtGEeocGl+MHzs/JqEPPQCxafXWv0LMAByMnBheWYeAAAAAABJRU5ErkJggg==') center center no-repeat;
+}
+
+#controls {
+    position: absolute;
+    bottom: -300px;
+    width: 566px;
+    text-align: center;
+    padding-left: 10px;
+}
+
+#game_msg {
+    color: #ffce00;
+    font-size: 2em;
+    font-weight: bold;
+    opacity: .8;
+    display: inline-block;
+}
+
+#play_control {
+    display: table;
+    margin: 20px auto;
+    border-radius: 10px;
+    border: none;
+    background-color: #176f68;
+    color: white;
+    height: 35px;
+    width: 120px;
+    line-height: 35px;
+    font-size: 1em;
+    cursor: pointer;
+}
+#play_control:hover {
+    -webkit-box-shadow: 0 3px 5px 0px black;
+    -moz-box-shadow: 0 3px 5px 0px black;
+    box-shadow: 0 3px 5px 0px black;
+}
+
+#instructions {
+    display: table;
+    margin: auto;
+    text-align: left;
+    font-size: .8em;
+    color: #a7a7a7;
+    margin-top: 14px;
+}
+
+.game_info {
+    width: 100px;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #3b3b3b;
+    box-shadow: inset 3px 3px 7px rgba(57, 57, 57, 0.9);
+    cursor: default;
+    color: black;
+}
+
+#high_score {
+    color: #8c0000;
+}
