@@ -35,7 +35,7 @@ Just a simple arkanoid style game (MIT License)
 Move racket by left/right cursor keys or by dragging the racket
 Start/Pause the game with spacebar key
 
--Bonuses:
+- Bonuses:
 Longer racket by hitting the golden brick
 Extra ball after 9999 points
 
