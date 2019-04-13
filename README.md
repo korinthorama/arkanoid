@@ -9,14 +9,18 @@ Just a simple arkanoid style game (MIT License)
 - Include plugin's styles
 <link rel="stylesheet" href="css/arkanoid.css" type="text/css">
 
+
 - Include jQuery library
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
+
 
 - Include jQuery-UI for draggable racket
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
+
 - Include the plugin js code
 <script type="text/javascript" src="js/arkanoid.js"></script>
+
 
 - Create an empty container like <div id="my_arkanoid"></div>
 
