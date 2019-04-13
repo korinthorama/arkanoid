@@ -55,8 +55,8 @@
                     elements.balls = $(' <input class="game_info" id="balls" type="text" value="" disabled>');
                     elements.h3_high_score = $('<h3>High Score</h3>');
                     elements.high_score = $('<input class="game_info" id="high_score" type="text" value="0" disabled>');
-                    elements.h3_keyboard = $('<h3>Keyboard</h3>');
-                    elements.instructions = $('<div id="instructions">Play / Pause: Spacebar<br>Move: L / R - Drag<br></div>');
+                    elements.h3_keyboard = $('<h3>Controls</h3>');
+                    elements.instructions = $('<div id="instructions">Play/Pause:<div>Spacebar</div>Racket handlers:<div>Cursor keys or Drag</div></div>');
                     elements.play_control = $('<input type="button" id="play_control" value="Start">');
                     elements.controls = $(' <div id="controls"><div id="game_msg">READY</div></div>');
                     elements.terrain.append(elements.brick);
