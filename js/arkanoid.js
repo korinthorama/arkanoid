@@ -618,14 +618,20 @@
                                             game.score += 50; // increase score;
                                             if (game.score > 9999 && game.bonus_ball == 0) ball.bonus(); // give ball bonus if the score is greater than 9999 and no other bonus has been given so far
                                             // change direction accordingly
-                                            if (game.dir == "upleft") choice = "upleft";
-                                            if (game.dir == "upright") choice = "upright";
-                                            if (game.dir == "downleft") choice = "downleft";
-                                            if (game.dir == "downright") choice = "downright";
-                                            if (choice == "upleft") game.dir = "downleft";
-                                            if (choice == "upright") game.dir = "downright";
-                                            if (choice == "downleft") game.dir = "upleft";
-                                            if (choice == "downright") game.dir = "upright";
+                                            switch(game.dir) {
+                                                case "upleft":
+                                                    game.dir = "downleft";
+                                                    break;
+                                                case "upright":
+                                                    game.dir = "downright";
+                                                    break;
+                                                case "downleft":
+                                                    game.dir = "upleft";
+                                                    break;
+                                                case "downright":
+                                                    game.dir = "upright";
+                                                    break;
+                                            }
                                             game.update_board(); // update board info
                                         }
                                     }
