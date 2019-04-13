@@ -69,7 +69,7 @@
 .racket_right {
     display: inline-block;
     width: 10px;
-    height:  120px;
+    height: 120px;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAJCAIAAACExCpEAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMhJREFUeNpsjUkKwkAQRXuoFkQCigOKG5eahYqX8RbexKt4A08hqIir6C4D0Tgk6U6X3QSDCz+1e+//gvVqudluxlPBKGWMmKuiNYH2sNXvsblbKxmjPxgJjAbNRYdPJwLgH+ZO3emymSuUQlXYwSrGBv8SBpHeHWVRoFK2URklDvxQ708yl8Qa34HyEQTXKIr14ayyDHOJUtoBiynhYNtRfNepp54vfKeY5tYw4ZzUBAXfCzJOsgRviU4eeE+0MQwGTp0G/QgwAHnYbWbckStEAAAAAElFTkSuQmCC') center top no-repeat;;
 }
 
@@ -114,7 +114,7 @@
 
 #play_control {
     display: table;
-    margin: 20px auto;
+    margin: 13px auto;
     border-radius: 10px;
     border: none;
     background-color: #176f68;
@@ -125,6 +125,7 @@
     font-size: 1em;
     cursor: pointer;
 }
+
 #play_control:hover {
     -webkit-box-shadow: 0 3px 5px 0px black;
     -moz-box-shadow: 0 3px 5px 0px black;
@@ -136,8 +137,13 @@
     margin: auto;
     text-align: left;
     font-size: .8em;
-    color: #a7a7a7;
+    color: #06b7a9;
     margin-top: 14px;
+}
+
+#instructions div {
+    color: white;
+    margin-bottom: 5px;
 }
 
 .game_info {
