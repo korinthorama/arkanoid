@@ -22,7 +22,7 @@ Just a simple arkanoid style game (MIT License)
 <script type="text/javascript" src="js/arkanoid.js"></script>
 
 
-- Create an empty container like <div id="my_arkanoid"></div>
+- Create an empty container like &#x3C;div id=&#x22;my_arkanoid&#x22;&#x3E;&#x3C;/div&#x3E;
 
 - Make it a fully functional game
 <script type="text/javascript">
