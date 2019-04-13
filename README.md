@@ -13,7 +13,7 @@ Just a simple arkanoid style game (MIT License)
 -- Include jQuery library
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
 
-
+--
 -- Include jQuery-UI for draggable racket
 <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
