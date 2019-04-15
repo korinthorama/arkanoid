@@ -12,25 +12,25 @@ Just a simple arkanoid style game (MIT License)
 
 #### Include jQuery library
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>
+`<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.js"></script>`
 
 #### Include jQuery-UI for draggable racket
 
-<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+`<script type="text/javascript" src="js/jquery-ui.min.js"></script>`
 
 #### Include the plugin js code
 
-<script type="text/javascript" src="js/arkanoid.js"></script>
+`<script type="text/javascript" src="js/arkanoid.js"></script>`
 
 #### Create an empty container like &#x3C;div id=&#x22;my_arkanoid&#x22;&#x3E;&#x3C;/div&#x3E;
 
 #### Make it a fully functional game
 
-<script type="text/javascript">
+`<script type="text/javascript">
 	$(document).ready(function () {
 		$('#my_arkanoid').arkanoid();
 	});
-</script>
+</script>`
 
 #### Game controls: 
 
