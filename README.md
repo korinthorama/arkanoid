@@ -2,13 +2,13 @@
 
 Just a simple arkanoid style game (MIT License)
 
-###### Instructions 
+## Instructions 
 
 ###### Unpack  
 
 ###### Include plugin's styles
 
-<link rel="stylesheet" href="css/arkanoid.css" type="text/css">
+><link rel="stylesheet" href="css/arkanoid.css" type="text/css">
 
 ###### Include jQuery library
 
