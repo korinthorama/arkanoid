@@ -26,7 +26,7 @@
                     this.high_score = helper.get_cookie('arkanoid_high_score') || 0;
                     this.interval_ball_ms = 35; // interval ms for ball's controller
                     this.interval_racket_ms = 58;// interval ms for racket's controller
-                    this.playing = false; // is playing flag
+                    this.playing = this.disable_spacebar = false; // is playing flags
                     this.create(); // create markup
                     this.tw = parseInt($('#terrain_wrapper').width()) - 15; // terrain width
                     this.th = parseInt($('#terrain_wrapper').height()) - 11; // terrain height
@@ -37,7 +37,7 @@
                     this.update_board(); // update board info
                     racket.drag(); // set the racket draggable
                     bricks.init(); // set up game bricks
-                    this.controls(); //  keyboard events listeners
+                    this.controls(); // add keyboard event listeners
                 },
                 create: function () { // setup scene
                     var elements = {};
@@ -84,7 +84,7 @@
                     $('#balls').val(this.balls);
                 },
                 start: function () {
-                    this.playing = true; // flag for listeners
+                    game.playing = true; // flag for listeners
                     racket.drag();  // set the racket draggable
                     $('#game_msg').text(''); // clear game messages
                     $('#play_control').val('Pause'); // activate pause button
@@ -96,24 +96,26 @@
                     clearInterval(game.interval_controll);
                     clearInterval(game.interval_ball);
                     clearInterval(game.interval_racket);
-                    this.playing = false;
+                    game.playing = false;
                 },
                 paused: function () {
-                    this.stop();
+                    game.stop();
                     $('#game_msg').text('PAUSED'); // display game message
                     $('#play_control').val('Start'); // activate pause button
                 },
                 newball: function () {
-                    this.stop();
+                    game.stop();
                     $('#game_msg').text('READY'); // display game message
                     $('#play_control').val('Start'); // activate pause button
-                    this.balls--; // loose one ball
+                    game.balls--; // loose one ball
                     game.update_board();  // update board info
                     racket.size('normal');  // restore racket size
                     ball.reset(); // restore initial ball's position
+                    game.disable_spacebar = false; // activate spacebar again
                 },
                 game_over: function () {
-                    this.stop();
+                    game.stop();  // remove keyboard event listeners
+                    game.playing = false;
                     $('#game_msg').text('GAME OVER'); // display game message
                     $('#ball').hide('fast');  // hide the ball until new game
                     $('#racket').hide(); // hide the racket until new game starts
@@ -133,20 +135,22 @@
                         game.score = this.broken_bricks = 0; // initialize game vars for new game
                         game.update_board(); // update board info
                         bricks.init();  // set up game bricks again
+                        game.disable_spacebar = false; // activate spacebar again
                     }, 3000);
                 },
                 new_level: function () {
-                    this.stop();
+                    game.stop();
                     $('#play_control').val('Start'); //set Start button for next level
-                    this.level++; // next level
-                    if (this.level > 4) this.level = 1; // recycle levels
-                    this.interval_ball_ms -= 1; // speed up ball
-                    this.interval_racket_ms -= 1; // speed up racket
+                    game.level++; // next level
+                    if (game.level > 4) game.level = 1; // recycle levels
+                    game.interval_ball_ms -= 1; // speed up ball
+                    game.interval_racket_ms -= 1; // speed up racket
                     setTimeout(function () {
                         ball.reset(); // restore initial ball's position
                         $('#game_msg').text('NEXT LEVEL'); // display game message
                         game.broken_bricks = 0;// initialize var for new level
                         bricks.init();  // set up game bricks for next level
+                        game.disable_spacebar = false; // activate spacebar again
                     }, 100);
                 },
                 toggle_play: function () { // handle start and pause game
@@ -191,6 +195,7 @@
                         }
                         if (e.keyCode == 32) { // on space key release
                             e.preventDefault();
+                            if(game.disable_spacebar) return;
                             game.toggle_play(); // handle starting / pausing the game
                         }
                     });
@@ -309,6 +314,7 @@
                                 }
                             }
                             if (by > 368) { // racket missed the ball
+                                game.disable_spacebar = true;
                                 game.sounds.loose.play(); // play loosing sound
                                 setTimeout(function () {
                                     if (game.balls > 1) { // we have balls to continue the game
@@ -352,6 +358,7 @@
                                 }
                             }
                             if (by > 368) { // racket missed the ball
+                                game.playing = false;
                                 game.sounds.loose.play(); // play loosing sound
                                 setTimeout(function () {
                                     if (game.balls > 1) { // we have balls to continue the game
