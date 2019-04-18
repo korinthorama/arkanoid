@@ -151,6 +151,8 @@
                         game.broken_bricks = 0;// initialize var for new level
                         bricks.init();  // set up game bricks for next level
                         game.disable_spacebar = false; // activate spacebar again
+                        game.score += 100; // increase score, every level gives 100 points bonus;
+                        game.update_board();
                     }, 100);
                 },
                 toggle_play: function () { // handle start and pause game
@@ -311,6 +313,8 @@
                                     game.dir = "upleft"; // set new direction after bouncing
                                     game.factor = 0 - game.random(); // change random factor for bouncing angle
                                     game.sounds.racket.play(); // play racket bouncing sound
+                                    game.score ++; // increase score;
+                                    game.update_board(); // update board info
                                 }
                             }
                             if (by > 368) { // racket missed the ball
@@ -355,6 +359,8 @@
                                     game.dir = "upright"; // set new direction after bouncing
                                     game.factor = 0 - game.random(); // change random factor for bouncing angle
                                     game.sounds.racket.play(); // play racket bouncing sound
+                                    game.score ++; // increase score;
+                                    game.update_board(); // update board info
                                 }
                             }
                             if (by > 368) { // racket missed the ball
@@ -622,7 +628,7 @@
                                             game.broken_bricks++; // increase broken bricks
                                             game.sounds.brick.cloneNode(true).play(); // play brick's explosion sound
                                             if (id == game.bricks_count)  racket.size('large'); // give racket bonus if its a gold brick
-                                            game.score += 50; // increase score;
+                                            game.score += 30; // increase score;
                                             if (game.score > 9999 && game.bonus_ball == 0) ball.bonus(); // give ball bonus if the score is greater than 9999 and no other bonus has been given so far
                                             // change direction accordingly
                                             switch(game.dir) {
